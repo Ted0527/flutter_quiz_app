@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final Color _color = Colors.deepPurple;
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
@@ -59,20 +60,16 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               padding: EdgeInsets.only(bottom: width * 0.036),
               child: Center(
-                child: ButtonTheme(
-                  minWidth: width * 0.8,
-                  height: height * 0.05,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    // color: Colors.deepPurple,
-                    child: Text(
-                      'Start!',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      primary: _color,
+                      minimumSize: Size(200, 90),
+                      alignment: Alignment.center,
+                      textStyle: const TextStyle(fontSize: 37)),
+                  child: Text('Start!!'),
+                  onPressed: () {},
                 ),
               ),
             )
