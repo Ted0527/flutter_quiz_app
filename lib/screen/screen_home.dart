@@ -46,7 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.all(width * 0.048),
             ),
             _buildStep(width, '1. 랜덤으로 나오는 퀴즈를 풀어보세요.'),
-            _buildStep(width, '2. ')
+            _buildStep(
+                width, '2. 버그 문의는 https://github.com/Ted0527/flutter_quiz_app'),
+            _buildStep(width, '3. 만점자는 개발자와 식사를 할 수 있는 기회를 드립니다.')
           ],
         ),
       ),
