@@ -1,6 +1,10 @@
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -48,7 +52,30 @@ class _HomeScreenState extends State<HomeScreen> {
             _buildStep(width, '1. 랜덤으로 나오는 퀴즈를 풀어보세요.'),
             _buildStep(
                 width, '2. 버그 문의는 https://github.com/Ted0527/flutter_quiz_app'),
-            _buildStep(width, '3. 만점자는 개발자와 식사를 할 수 있는 기회를 드립니다.')
+            _buildStep(width, '3. 만점자는 개발자와 식사를 할 수 있는 기회를 드립니다.'),
+            Padding(
+              padding: EdgeInsets.all(width * 0.048),
+            ),
+            Container(
+              padding: EdgeInsets.only(bottom: width * 0.036),
+              child: Center(
+                child: ButtonTheme(
+                  minWidth: width * 0.8,
+                  height: height * 0.05,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    // color: Colors.deepPurple,
+                    child: Text(
+                      'Start!',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -58,17 +85,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildStep(double width, String title) {
     return Container(
       padding: EdgeInsets.fromLTRB(
-        width * 0.048,
-        width * 0.024,
-        width * 0.048,
-        width * 0.024,
+        width * 0.008,
+        width * 0.020,
+        width * 0.008,
+        width * 0.020,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Icon(
             Icons.check_box,
-            size: width * 0.04,
+            size: width * 0.01,
           ),
           Padding(
             padding: EdgeInsets.only(right: width * 0.024),
